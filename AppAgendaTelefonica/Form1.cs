@@ -30,7 +30,41 @@ namespace AppAgendaTelefonica
         private void A_ListaActualizada()
         {
             dtgAgenda.DataSource = null;
+            var f = new DataGridViewColumn();
+            
+            dtgAgenda.AutoGenerateColumns = false;
+            dtgAgenda.Columns.Add(new DataGridViewColumn()
+            { 
+                AutoSizeMode=DataGridViewAutoSizeColumnMode.Fill,
+                Name="Nombre",
+                HeaderText="Nombre",
+                DataPropertyName="Nombre"
+            }
+            )
+                ;
+            dtgAgenda.Columns.Add(new DataGridViewColumn
+            {
+                AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill,
+                Name = "Direccion",
+                HeaderText = "Dirección",
+                DataPropertyName="Direccion"
+            });
+            dtgAgenda.Columns.Add(new DataGridViewColumn
+            {
+                Width = 150,
+                Name = "Telefono",
+                HeaderText = "Teléfono",
+                DataPropertyName="Telefono"
+            }) ;
+            dtgAgenda.Columns.Add(new DataGridViewColumn
+            {
+                Width = 100,
+                Name = "TipoTelefono",
+                HeaderText = "Tipo Teléfono",
+                DataPropertyName="TipoTelefono"
+            });
             dtgAgenda.DataSource=a.Contactos;
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
