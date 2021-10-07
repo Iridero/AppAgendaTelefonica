@@ -58,6 +58,7 @@ namespace AppAgendaTelefonica
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.Text = "Eliminar contacto";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // button3
             // 

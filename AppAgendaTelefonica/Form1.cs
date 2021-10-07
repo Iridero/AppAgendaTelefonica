@@ -47,5 +47,15 @@ namespace AppAgendaTelefonica
             }
 
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+            foreach (DataGridViewRow row in dtgAgenda.SelectedRows)
+            {
+                Contacto c = (Contacto)row.DataBoundItem;
+                a.Eliminar(c);
+            }
+        }
     }
 }
